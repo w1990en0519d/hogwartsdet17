@@ -7,6 +7,13 @@ from selenium import webdriver
 class TestLogin():
 
     def setup(self):
+        self.driver.maximize_window()
+        self.driver.implicitly_wait(5)
+
+    def teardown(self):
+        self.driver.quit()
+
+    def test_logintmp(self):
         """
         复用浏览器调试
         chrome_arg = webdriver.ChromeOptions()
@@ -17,12 +24,6 @@ class TestLogin():
         chrome_arg = webdriver.ChromeOptions()
         chrome_arg.debugger_address = '127.0.0.1:9222'
         self.driver = webdriver.Chrome(options=chrome_arg)
-        self.driver.implicitly_wait(5)
-
-    def teardown(self):
-        self.driver.quit()
-
-    def test_logintmp(self):
         self.driver.get("https://work.weixin.qq.com/wework_admin/frame")
         self.driver.find_element_by_xpath("//*[@class='ww_indexImg ww_indexImg_AddMember']").click()
         self.driver.find_element_by_id("username").send_keys("哈尼")
@@ -41,6 +42,11 @@ class TestLogin():
             json.dump(cookies, f)
 
     def test_login_cookie(self):
+        """
+        利用cookie进行登录操作
+        :return:
+        """
+        self.driver = webdriver.Chrome()
         self.driver.get("https://work.weixin.qq.com/wework_admin/frame")
         # 使用json.loads()读取cookies
         # with open('./cookies.txt','r',encoding='utf-8') as f:
