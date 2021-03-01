@@ -7,6 +7,9 @@ from selenium import webdriver
 class TestLogin():
 
     def setup(self):
+        chrome_arg = webdriver.ChromeOptions()
+        chrome_arg.debugger_address = '127.0.0.1:9222'
+        self.driver = webdriver.Chrome(options=chrome_arg)
         self.driver.maximize_window()
         self.driver.implicitly_wait(5)
 
@@ -21,10 +24,8 @@ class TestLogin():
         self.driver = webdriver.Chrome(options=chrome_arg)
         :return:
         """
-        chrome_arg = webdriver.ChromeOptions()
-        chrome_arg.debugger_address = '127.0.0.1:9222'
-        self.driver = webdriver.Chrome(options=chrome_arg)
-        self.driver.get("https://work.weixin.qq.com/wework_admin/frame")
+
+        self.driver.get("https://work.weixin.qq.com/wework_admin/frame#index")
         self.driver.find_element_by_xpath("//*[@class='ww_indexImg ww_indexImg_AddMember']").click()
         self.driver.find_element_by_id("username").send_keys("哈尼")
         self.driver.find_element_by_id("memberAdd_english_name").send_keys("hali")
