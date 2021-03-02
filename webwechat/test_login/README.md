@@ -1,4 +1,4 @@
-# web企业微信自动化实战一
+# web企业微信自动化实战一 例子：test_login
 
 一.利用浏览器复用实现登录操作，例如chrome 
     首先配置浏览器的环境变量：path：C:\Program Files\Google\Chrome\Application 
