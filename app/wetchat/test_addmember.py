@@ -33,7 +33,7 @@ class TestAddmember:
     def teardown(self):
         self.driver.quit()
 
-    @pytest.mark.parametrize('name,phone', datas)
+    @pytest.mark.parametrize('name, phone', datas)
     def test_addmember(self, name, phone):
         """
         前提条件: 已登录状态（ noReset=True）
