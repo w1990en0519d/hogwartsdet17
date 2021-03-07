@@ -34,6 +34,7 @@ class TestAddmember:
     def teardown(self):
         self.driver.quit()
 
+    # 定义自己的滑动模块
     def swipe_find(self, text, num=3):
         for i in range(num):
             if i == num - 1:
@@ -49,6 +50,13 @@ class TestAddmember:
                 size = self.driver.get_window_size()
                 width = size.get('width')
                 height = size.get("height")
+
+                start_x = width / 2
+                start_y = height * 0.8
+
+                end_x = start_x
+                end_y = height * 0.3
+                self.driver.swipe(start_x, start_y, end_x, end_y, 1000)
 
     @pytest.mark.parametrize('name, phone', datas)
     def test_addmember(self, name, phone):

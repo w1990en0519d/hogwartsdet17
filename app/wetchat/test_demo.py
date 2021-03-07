@@ -35,7 +35,7 @@ class TestDemo:
         """
         self.driver.find_element(MobileBy.XPATH, '//android.view.ViewGroup//*[@text="工作台"]').click()
         # android_uiautomator 里面要用双引号，外面用单引号。
-        # 向下滑动两次，再向上查找，直到找到元素
+        # 向下滑动两次，再向上查找，直到找到元素，该滑动模块是appium自带的模块
         self.driver.find_element(MobileBy.ANDROID_UIAUTOMATOR,
                                  'new UiScrollable(new UiSelector()'
                                  '.scrollable(true).instance(0))'
