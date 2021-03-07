@@ -2,6 +2,7 @@ import pytest
 import yaml
 from appium import webdriver
 from appium.webdriver.common.mobileby import MobileBy
+from selenium.common.exceptions import NoSuchElementException
 
 
 def get_datas():
@@ -33,6 +34,22 @@ class TestAddmember:
     def teardown(self):
         self.driver.quit()
 
+    def swipe_find(self, text, num=3):
+        for i in range(num):
+            if i == num - 1:
+                self.driver.implicitly_wait(5)
+                raise NoSuchElementException(f'找到{num}次数，未找到。')
+            self.driver.implicitly_wait(1)
+            try:
+                element = self.driver.find_element(MobileBy.XPATH, f'//*[@text="{text}"]')
+                self.driver.implicitly_wait(5)
+                return element
+            except:
+                print("未找到")
+                size = self.driver.get_window_size()
+                width = size.get('width')
+                height = size.get("height")
+
     @pytest.mark.parametrize('name, phone', datas)
     def test_addmember(self, name, phone):
         """
@@ -54,3 +71,4 @@ class TestAddmember:
         self.driver.find_element(MobileBy.ID, 'com.tencent.wework:id/b7m').send_keys(name)
         self.driver.find_element(MobileBy.ID, 'com.tencent.wework:id/fwi').send_keys(phone)
         self.driver.find_element(MobileBy.XPATH, '//*[@text="保存"]').click()
+        assert self.driver.find_element(MobileBy.XPATH, '//*[@text="添加成功"]')
