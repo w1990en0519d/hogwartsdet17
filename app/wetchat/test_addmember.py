@@ -74,7 +74,9 @@ class TestAddmember:
         :return:
         """
         self.driver.find_element(MobileBy.XPATH, '//*[@text="通讯录"]').click()
-        self.driver.find_element(MobileBy.XPATH, '//*[@text="添加成员"]').click()
+        element = self.swipe_find('添加成员')
+        element.click()
+        # self.driver.find_element(MobileBy.XPATH, '//*[@text="添加成员"]').click()
         self.driver.find_element(MobileBy.XPATH, '//*[@text="手动输入添加"]').click()
         self.driver.find_element(MobileBy.ID, 'com.tencent.wework:id/b7m').send_keys(name)
         self.driver.find_element(MobileBy.ID, 'com.tencent.wework:id/fwi').send_keys(phone)
