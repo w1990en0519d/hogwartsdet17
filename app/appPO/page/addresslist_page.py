@@ -18,5 +18,5 @@ class AddressListPage(BasePage):
         return AddContactPage(self.driver)
 
     def goto_search(self):
-        self.find(MobileBy.ID, 'com.tencent.wework:id/igk').click()
+        self.find_and_click(MobileBy.ID, 'com.tencent.wework:id/igk')
         return SearchPage(self.driver)

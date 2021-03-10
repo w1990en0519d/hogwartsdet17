@@ -1,3 +1,5 @@
+import logging
+
 from appium.webdriver.common.mobileby import MobileBy
 from appium.webdriver.webdriver import WebDriver
 
@@ -6,14 +8,25 @@ from selenium.common.exceptions import NoSuchElementException
 
 
 class BasePage:
+    logging.basicConfig(level=logging.INFO)
+
     def __init__(self, driver: WebDriver = None):  # 类型提示功能
         self.driver = driver
 
     def find(self, locator, value):
+        logging.info('find')
+        logging.info(locator, value)
         return self.driver.find_element(locator, value)
 
     def finds(self, locator, value):
+        logging.info("finds")
+        logging.info(locator, value)
         return self.driver.find_elements(locator, value)
+
+    def find_and_click(self, locator, value):
+        logging.info("find_and_click")
+        logging.info(locator, value)
+        return self.driver.find_element(locator, value).click()
 
     # 定义自己的滑动模块
     def swipe_find(self, text, num=3):

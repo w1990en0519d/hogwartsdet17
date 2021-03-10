@@ -13,4 +13,4 @@ class DelmemberPage(BasePage):
         self.find(MobileBy.XPATH, '//*[@text="确定"]').click()
 
     def verfy_ok(self):
-        assert self.find(MobileBy.XPATH, '//*[@text="已离职"]')
+        assert self.find(MobileBy.XPATH, '//*[@text="无搜索结果"]')

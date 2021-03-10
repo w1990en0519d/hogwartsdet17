@@ -1,0 +1,14 @@
+desirecaps:
+  platformName: "android"
+  deviceName: "127.0.0.1:7555"
+  appPackage: "com.tencent.wework"
+  appActivity: ".launch.LaunchSplashActivity"
+  noReset: "true"
+  settings[waitForIdleTimeout]: 1
+  skipServerInstallation: "true"
+  skipDeviceInitialization: "true"
+
+
+server:
+  ip: 127.0.0.1
+  port: 4723

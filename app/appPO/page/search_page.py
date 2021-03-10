@@ -1,3 +1,5 @@
+from time import sleep
+
 from appium.webdriver.common.mobileby import MobileBy
 
 from app.appPO.page.base_page import BasePage
@@ -10,8 +12,10 @@ class SearchPage(BasePage):
     """
 
     def goto_Personalmation(self):
-        self.find(MobileBy.XPATH, '//*[@text="搜索"]').send_keys('aa')
-        elements = self.finds(MobileBy.XPATH, '//*[@text="aa"]')
+        self.find(MobileBy.XPATH, '//*[@text="搜索"]').send_keys('c')
+        sleep(3)
+        elements = self.finds(MobileBy.XPATH, '//*[@text="c"]')
+        print("元素个数：", elements)
         if len(elements) > 1:
             elements[1].click()
-            return PersonalPage(self.driver)
+        return PersonalPage(self.driver)

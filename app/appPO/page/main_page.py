@@ -15,6 +15,6 @@ class MainPage(BasePage):
         # 点击通讯录
         # self.find(*self.addresslist_element) # 解元组
 
-        self.find(MobileBy.XPATH, '//*[@text="通讯录"]').click()
+        self.find_and_click(MobileBy.XPATH, '//*[@text="通讯录"]')
 
         return AddressListPage(self.driver)
