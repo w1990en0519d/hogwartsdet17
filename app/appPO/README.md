@@ -27,7 +27,7 @@ appium:
 3、driver 复用，封装base_page.py 将__init__方法，find(),finds(), swipe_find() 底层常用的一些方法封装起来，driver 不要暴露出来。   
 4、将页面的动态数据可以写成页面数据驱动(yaml文件)
 
-# c日志 收集
+# 日志 收集
 
 设置日志级别
 
