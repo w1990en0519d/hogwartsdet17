@@ -1,0 +1,5 @@
+[2021-03-16 22:47:59,120]  base_page.py:55:find_and_click: find//*[@resource-id="com.xueqiu.android:id/post_status"]
+[2021-03-16 22:48:02,161]  base_page.py:55:find_and_click: find//*[@text="行情"]
+[2021-03-16 22:48:07,600]  base_page.py:55:find_and_click: find//*[@text="行情"]
+[2021-03-16 22:48:08,330]  base_page.py:55:find_and_click: find//*[@resource-id="com.xueqiu.android:id/action_search"]
+[2021-03-16 22:48:11,727]  base_page.py:55:find_and_click: find//*[@text="BABA"]
