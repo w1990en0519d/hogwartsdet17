@@ -1,6 +1,7 @@
-import yaml
-from appium import webdriver
 
+import yaml
+
+from appium import webdriver
 from UI_framework.page.base_page import BasePage
 from UI_framework.page.main_page import MainPage
 

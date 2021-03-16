@@ -10,4 +10,4 @@ class TestUiDemo:
         pass
 
     def test_uidemo(self):
-        self.app.goto_main().goto_market()
+        self.app.goto_main().goto_market().goto_search().search()

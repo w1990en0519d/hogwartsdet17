@@ -1,0 +1,8 @@
+search:
+  - action: find_and_sendkey
+    locator: xpath
+    value: //*[@resource-id="com.xueqiu.android:id/search_input_text"]
+    concent: alibaba
+  - action: find_and_click
+    locator: xpath
+    value: //*[@text="BABA"]
